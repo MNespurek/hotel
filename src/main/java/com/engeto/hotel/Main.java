@@ -14,15 +14,17 @@ public class Main {
         Room room1 = new Room(1, 1, true, true, 1100);
         Room room2 = new Room(2, 1, true, true, 1100);
         Room room3 = new Room(3, 3, false, true, 2400);
-        room1.addGuest(guest);
-        room3.addGuest(guest);
-        room3.addGuest(guest1);
-        Booking booking1 = new Booking(room1, LocalDate.of(2021, 7, 19), LocalDate.of(2021, 7, 26),TypeOfVacation.REKREACNI );
+
+        Booking booking1 = new Booking(room1, LocalDate.of(2021, 7, 19), LocalDate.of(2021, 7, 26), TypeOfVacation.REKREACNI);
         Booking booking2 = new Booking(room3, LocalDate.of(2021, 9, 1), LocalDate.of(2021, 9, 14), TypeOfVacation.PRACOVNI);
 
-        Reservations reservations = new Reservations();
-        reservations.addBooking(booking1);
-        reservations.addBooking(booking2);
-        reservations.writeReservations();
+        booking1.addGuest(guest);
+        booking2.addGuest(guest);
+        booking2.addGuest(guest1);
+
+        BookingManager bookingManager = new BookingManager();
+        bookingManager.addBooking(booking1);
+        bookingManager.addBooking(booking2);
+        bookingManager.writeReservations();
     }
 }

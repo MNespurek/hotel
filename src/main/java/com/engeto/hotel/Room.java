@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Room {
-    List<Guest> roomGuests = new ArrayList<>();
+
     private Integer number;
     private Integer beds;
     private Boolean isBalconey;
@@ -12,14 +12,15 @@ public class Room {
     private Integer price;
 
 
-    Room(Integer number, Integer beds, Boolean isBalconey, Boolean seaView, Integer price) {
+
+    public Room(Integer number, Integer beds, Boolean isBalconey, Boolean seaView, Integer price) {
         this.number = number;
         this.beds = beds;
         this.isBalconey = isBalconey;
         this.seaView = seaView;
         this.price = price;
     }
-    Room(Integer number, Integer beds, Integer price) {
+    public Room(Integer number, Integer beds, Integer price) {
         this(number, beds, false, false, price);
     }
 
@@ -65,12 +66,5 @@ public class Room {
         this.price = price;
     }
 
-    public void addGuest(Guest guest) {
-        roomGuests.add(guest);
     }
-    public void getGuests() {
-        for (Guest writeGuests : roomGuests) {
-            System.out.println("Hosté jsou " + writeGuests.getFirstName()+ " "+writeGuests.getSecondName()+ ".");
-        }
-    }
-}
+
