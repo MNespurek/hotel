@@ -1,14 +1,11 @@
 package com.engeto.hotel;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class Booking {
-
-    //List<Booking> bookingList = new ArrayList<>();
-
     List<Guest> roomGuests = new ArrayList<>();
     private Room room;
     private LocalDate beginDate;
@@ -62,6 +59,22 @@ public class Booking {
             System.out.println("Host na pokoji " +getRoom().getNumber()+": ");
             System.out.println(" je " + writeGuests.getFirstName() + " " + writeGuests.getSecondName() + ".");
         }
+    }
+    public Guest getFirstGuest() {
+        for (Guest guest : roomGuests) {
+            return guest;
+        }
+        return null;
+    }
+    public double getNumberOfGuest() {
+        return roomGuests.size();
+    }
+    public long getBookingLength() {
+        return ChronoUnit.DAYS.between(getBeginDate(), getEndDate());
+    }
+    public long getPrice() {
+        long roomPrice = getRoom().getPrice();
+        return roomPrice*getBookingLength();
     }
 }
 

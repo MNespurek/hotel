@@ -14,7 +14,6 @@ public class Guest {
         this.firstName = firstName;
         this.secondName = secondName;
         this.birth = birth;
-
     }
 
     public void setFirstName(String firstName) {

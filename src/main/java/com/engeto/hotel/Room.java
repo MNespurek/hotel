@@ -42,8 +42,13 @@ public class Room {
         this.beds = beds;
     }
 
-    public Boolean getBalconey() {
-        return isBalconey;
+    public String getBalconey() {
+
+        if (isBalconey) {
+
+            return "ano";
+        }
+        return "ne";
     }
 
     public void setBalconey(Boolean balconey) {
@@ -65,6 +70,5 @@ public class Room {
     public void setPrice(Integer price) {
         this.price = price;
     }
-
-    }
+}
 
